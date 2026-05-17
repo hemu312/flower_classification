@@ -1,0 +1,282 @@
+[
+  {
+    "id": "marigold",
+    "common_name": "Marigold",
+    "hindi_name": "Genda",
+    "scientific_name": "Tagetes erecta",
+    "family": "Asteraceae"
+  },
+  {
+    "id": "rose",
+    "common_name": "Rose",
+    "hindi_name": "Gulab",
+    "scientific_name": "Rosa indica / Rosa hybrida",
+    "family": "Rosaceae"
+  },
+  {
+    "id": "jasmine",
+    "common_name": "Jasmine",
+    "hindi_name": "Chameli / Mogra",
+    "scientific_name": "Jasminum sambac",
+    "family": "Oleaceae"
+  },
+  {
+    "id": "lotus",
+    "common_name": "Lotus",
+    "hindi_name": "Kamal",
+    "scientific_name": "Nelumbo nucifera",
+    "family": "Nelumbonaceae"
+  },
+  {
+    "id": "hibiscus",
+    "common_name": "Hibiscus",
+    "hindi_name": "Gudhal",
+    "scientific_name": "Hibiscus rosa-sinensis",
+    "family": "Malvaceae"
+  },
+  {
+    "id": "bougainvillea",
+    "common_name": "Bougainvillea",
+    "hindi_name": "Bougainvillea",
+    "scientific_name": "Bougainvillea spectabilis",
+    "family": "Nyctaginaceae"
+  },
+  {
+    "id": "plumeria",
+    "common_name": "Plumeria (Frangipani)",
+    "hindi_name": "Champa / Golainchi",
+    "scientific_name": "Plumeria rubra",
+    "family": "Apocynaceae"
+  },
+  {
+    "id": "dahlia",
+    "common_name": "Dahlia",
+    "hindi_name": "Dahlia",
+    "scientific_name": "Dahlia pinnata",
+    "family": "Asteraceae"
+  },
+  {
+    "id": "chrysanthemum",
+    "common_name": "Chrysanthemum",
+    "hindi_name": "Guldaudi",
+    "scientific_name": "Chrysanthemum indicum",
+    "family": "Asteraceae"
+  },
+  {
+    "id": "zinnia",
+    "common_name": "Zinnia",
+    "hindi_name": "Zinnia",
+    "scientific_name": "Zinnia elegans",
+    "family": "Asteraceae"
+  },
+  {
+    "id": "periwinkle",
+    "common_name": "Periwinkle",
+    "hindi_name": "Sadabahar",
+    "scientific_name": "Catharanthus roseus",
+    "family": "Apocynaceae"
+  },
+  {
+    "id": "ixora",
+    "common_name": "Ixora",
+    "hindi_name": "Rangan",
+    "scientific_name": "Ixora coccinea",
+    "family": "Rubiaceae"
+  },
+  {
+    "id": "cockscomb",
+    "common_name": "Cock's Comb",
+    "hindi_name": "Lal Murga",
+    "scientific_name": "Celosia argentea",
+    "family": "Amaranthaceae"
+  },
+  {
+    "id": "portulaca",
+    "common_name": "Portulaca",
+    "hindi_name": "Naulakhi / Gulab Moss",
+    "scientific_name": "Portulaca grandiflora",
+    "family": "Portulacaceae"
+  },
+  {
+    "id": "sunflower",
+    "common_name": "Sunflower",
+    "hindi_name": "Surajmukhi",
+    "scientific_name": "Helianthus annuus",
+    "family": "Asteraceae"
+  },
+  {
+    "id": "petunia",
+    "common_name": "Petunia",
+    "hindi_name": "Petunia",
+    "scientific_name": "Petunia hybrida",
+    "family": "Solanaceae"
+  },
+  {
+    "id": "tuberose",
+    "common_name": "Tuberose",
+    "hindi_name": "Rajnigandha",
+    "scientific_name": "Polianthes tuberosa",
+    "family": "Asparagaceae"
+  },
+  {
+    "id": "rangooncreeper",
+    "common_name": "Rangoon Creeper",
+    "hindi_name": "Madhumalati",
+    "scientific_name": "Quisqualis indica",
+    "family": "Combretaceae"
+  },
+  {
+    "id": "goldenshowertree",
+    "common_name": "Golden Shower Tree",
+    "hindi_name": "Amaltas",
+    "scientific_name": "Cassia fistula",
+    "family": "Fabaceae"
+  },
+  {
+    "id": "flameoftheforest",
+    "common_name": "Flame of the Forest",
+    "hindi_name": "Palash / Dhak",
+    "scientific_name": "Butea monosperma",
+    "family": "Fabaceae"
+  },
+  {
+    "id": "kachnar",
+    "common_name": "Kachnar",
+    "hindi_name": "Kachnar",
+    "scientific_name": "Bauhinia variegata",
+    "family": "Fabaceae"
+  },
+  {
+    "id": "champak",
+    "common_name": "Champak",
+    "hindi_name": "Champak / Champa",
+    "scientific_name": "Magnolia champaca",
+    "family": "Magnoliaceae"
+  },
+  {
+    "id": "nightqueen",
+    "common_name": "Night Queen",
+    "hindi_name": "Raat ki Rani",
+    "scientific_name": "Cestrum nocturnum",
+    "family": "Solanaceae"
+  },
+  {
+    "id": "oleander",
+    "common_name": "Oleander",
+    "hindi_name": "Kaner",
+    "scientific_name": "Nerium oleander",
+    "family": "Apocynaceae"
+  },
+  {
+    "id": "butterflypea",
+    "common_name": "Butterfly Pea",
+    "hindi_name": "Aparajita",
+    "scientific_name": "Clitoria ternatea",
+    "family": "Fabaceae"
+  },
+  {
+    "id": "lantana",
+    "common_name": "Lantana",
+    "hindi_name": "Lantana",
+    "scientific_name": "Lantana camara",
+    "family": "Verbenaceae"
+  },
+  {
+    "id": "vinca",
+    "common_name": "Vinca (Madagascar Periwinkle)",
+    "hindi_name": "Sadaphuli",
+    "scientific_name": "Vinca rosea",
+    "family": "Apocynaceae"
+  },
+  {
+    "id": "spiderlily",
+    "common_name": "Spider Lily",
+    "hindi_name": "Sudarshan",
+    "scientific_name": "Crinum asiaticum",
+    "family": "Amaryllidaceae"
+  },
+  {
+    "id": "rainlily",
+    "common_name": "Rain Lily",
+    "hindi_name": "Barsati Phool",
+    "scientific_name": "Zephyranthes rosea",
+    "family": "Amaryllidaceae"
+  },
+  {
+    "id": "mexicanpetunia",
+    "common_name": "Mexican Petunia",
+    "hindi_name": "Ruellia",
+    "scientific_name": "Ruellia simplex",
+    "family": "Acanthaceae"
+  },
+  {
+    "id": "cosmos",
+    "common_name": "Cosmos",
+    "hindi_name": "Cosmos",
+    "scientific_name": "Cosmos bipinnatus",
+    "family": "Asteraceae"
+  },
+  {
+    "id": "gulmohar",
+    "common_name": "Gulmohar (Royal Poinciana)",
+    "hindi_name": "Gulmohar",
+    "scientific_name": "Delonix regia",
+    "family": "Fabaceae"
+  },
+  {
+    "id": "amaltas",
+    "common_name": "Amaltas (Golden Shower Tree)",
+    "hindi_name": "Amaltas",
+    "scientific_name": "Cassia fistula",
+    "family": "Fabaceae"
+  },
+  {
+    "id": "kachnar",
+    "common_name": "Kachnar (Orchid Tree)",
+    "hindi_name": "Kachnar",
+    "scientific_name": "Bauhinia variegata",
+    "family": "Fabaceae"
+  },
+  {
+    "id": "palash",
+    "common_name": "Palash (Flame of the Forest)",
+    "hindi_name": "Palash / Dhak / Tesu",
+    "scientific_name": "Butea monosperma",
+    "family": "Fabaceae"
+  },
+  {
+    "id": "ashokatree",
+    "common_name": "Ashoka Tree",
+    "hindi_name": "Ashoka / Sita Ashok",
+    "scientific_name": "Saraca asoca",
+    "family": "Fabaceae"
+  },
+  {
+    "id": "trumpettree",
+    "common_name": "Trumpet Tree (Yellow Bells)",
+    "hindi_name": "Piliya / Sona Champa",
+    "scientific_name": "Tabebuia aurea / Handroanthus chrysanthus",
+    "family": "Bignoniaceae"
+  },
+  {
+    "id": "silkcottontree",
+    "common_name": "Silk Cotton Tree (Semal)",
+    "hindi_name": "Semal / Shimul",
+    "scientific_name": "Bombax ceiba",
+    "family": "Malvaceae"
+  },
+  {
+    "id": "prideofindia",
+    "common_name": "Pride of India (Crepe Myrtle)",
+    "hindi_name": "Jarul / Arjuna",
+    "scientific_name": "Lagerstroemia speciosa",
+    "family": "Lythraceae"
+  },
+  {
+    "id": "bottlebrushtree",
+    "common_name": "Bottle Brush Tree",
+    "hindi_name": "Bottle Brush",
+    "scientific_name": "Callistemon citrinus",
+    "family": "Myrtaceae"
+  }
+]
