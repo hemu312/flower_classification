@@ -1,0 +1,6 @@
+[submodule "flower-classification"]
+	path = flower-classification
+	url = git@hf.co:spaces/hemu312/flower-classification
+[submodule "flower-classification_convnext"]
+	path = flower-classification_convnext
+	url = git@hf.co:hemu312/flower-classification_convnext
