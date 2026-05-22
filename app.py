@@ -7,6 +7,7 @@ import io
 from pathlib import Path
 from fastapi import FastAPI, File, UploadFile
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 # import uvicorn
 
 # Download your model from Hugging Face Hub
@@ -29,6 +30,14 @@ transform = transforms.Compose([
 ])
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Route for POST method /predict
 @app.post("/predict")
