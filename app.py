@@ -1,11 +1,14 @@
+from datetime import datetime
+from zoneinfo import ZoneInfo
 import json
+import shutil
 import torch
 from huggingface_hub import hf_hub_download
 import torchvision.transforms as transforms
 from PIL import Image
 import io
 from pathlib import Path
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 # import uvicorn
@@ -64,6 +67,50 @@ async def predict(imgFile: UploadFile = File(...)):
     except Exception as e:
         return {"Error": str(e)}
     
+# Feedback Directory
+FEEDBACK_DIR = Path("feedback_data")
+FEEDBACK_DIR.mkdir(exist_ok=True)
+# Feedback route, Receive feedback with an image file, predicted value, and correct value.
+@app.post("/feedback")
+async def feedback(image: UploadFile = File(...), predicted_value: str = Form(...), correct_value: str = Form(...)):
+    try:
+        # Trim whitespace
+        predicted_value = predicted_value.strip()
+        correct_value = correct_value.strip()
+
+        # Check values and proceed
+        if predicted_value in class_names and correct_value in class_names:
+            # Generate a unique filename with timestamp
+            timestamp = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d%H%M%S")
+            file_extension = Path(image.filename).suffix
+            filename = f"{correct_value}_{predicted_value}_{timestamp}{file_extension}"
+            file_path = FEEDBACK_DIR / filename
+            
+            # Save the uploaded image
+            with open(file_path, "wb") as buffer:
+                shutil.copyfileobj(image.file, buffer)
+            
+            # Log feedback data (you can also save to database)
+            feedback_record = {
+                "timestamp": timestamp,
+                "predicted_value": predicted_value,
+                "correct_value": correct_value
+            }
+            
+            return {
+                "status": "success",
+                "message": "Feedback received successfully",
+                "data": feedback_record
+            }
+        else:
+            raise Exception("Invalid values")
+    
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": f"Error processing feedback: {str(e)}"
+        }
+
 # Mount frontend directory
 frontend = Path("frontend")
 app.mount("/", StaticFiles(directory=frontend, html=True), name="frontend")
