@@ -55,7 +55,7 @@ async def predict(imgFile: UploadFile = File(...)):
             output = model(input_tensor)
             probabilities = torch.softmax(output, dim=1)
         
-        top_probs, top_indices = torch.topk(probabilities, k=5)
+        top_probs, top_indices = torch.topk(probabilities, k=probabilities.size(1))
         
         results = {}
         for prob, idx in zip(top_probs[0], top_indices[0]):
