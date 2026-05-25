@@ -81,7 +81,7 @@ async def feedback(image: UploadFile = File(...), predicted_value: str = Form(..
         # Check values and proceed
         if predicted_value in class_names and correct_value in class_names:
             # Generate a unique filename with timestamp
-            timestamp = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d%H%M%S")
+            timestamp = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d%H")
             file_extension = Path(image.filename).suffix
             filename = f"{correct_value}_{predicted_value}_{timestamp}{file_extension}"
             file_path = FEEDBACK_DIR / filename
