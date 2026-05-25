@@ -34,14 +34,10 @@ export function usePrediction() {
       const data = await predictResponse.json()
 
       // Convert object { label: confidence, ... } to array and sort by confidence
-      const predictionsArray = Object.entries(data).map(([label, confidence]) => ({
+      predictions.value = Object.entries(data).map(([label, confidence]) => ({
         label,
         confidence
       }))
-      // Sort by confidence descending and take top 5
-      predictions.value = predictionsArray
-        .sort((a, b) => b.confidence - a.confidence)
-        .slice(0, 5)
     } catch (err) {
       error.value = `Error: ${err.message}`
       console.error('Prediction error:', err)
