@@ -68,8 +68,8 @@ async def predict(imgFile: UploadFile = File(...)):
         return {"Error": str(e)}
     
 # Feedback Directory
-FEEDBACK_DIR = Path("feedback_data")
-FEEDBACK_DIR.mkdir(exist_ok=True)
+FEEDBACK_DIR = Path("/data/feedback_data")
+FEEDBACK_DIR.mkdir(parents=True, exist_ok=True)
 # Feedback route, Receive feedback with an image file, predicted value, and correct value.
 @app.post("/feedback")
 async def feedback(image: UploadFile = File(...), predicted_value: str = Form(...), correct_value: str = Form(...)):
