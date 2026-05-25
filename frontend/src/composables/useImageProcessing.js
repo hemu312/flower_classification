@@ -1,11 +1,11 @@
 import { useAppState } from './useAppState'
 
 export function useImageProcessing() {
-  const { resizedImage, originalFile, imageUploaded, error, predictions } = useImageState()
-  const fileInput = ref(null)
-
+  const { resizedImage, originalFile, imageUploaded, error, predictions, isFeedbackSubmitted } = useAppState()
+  
   const handleFileUpload = (event) => {
     const file = event.target.files[0]
+    isFeedbackSubmitted.value = false
 
     if (!file) return
 
@@ -59,12 +59,5 @@ export function useImageProcessing() {
     reader.readAsDataURL(file)
   }
 
-  const resetApp = () => {
-    imageUploaded.value = false
-    resizedImage.value = null
-    originalFile.value = null
-    fileInput.value.value = ''
-  }
-
-  return { fileInput, handleFileUpload, resetApp }
+  return { handleFileUpload }
 }
