@@ -27,6 +27,14 @@
         <span class="result-confidence">{{ (result.confidence * 100).toFixed(2) }}%</span>
       </div>
     </div>
+    </div>
+
+    <!-- Feedback Section -->
+    <div class="feedback-section" :class="{ active: predictions.length > 0 }">
+        <button v-if="!isFeedbackSubmitted" class="submit-feedback-btn" @click="submitFeedback(predictions[selectedIndex]?.label); selectedIndex = null" :disabled="loading">Submit Feedback</button>
+        <div v-if="isFeedbackSubmitted" class="feedback-response">Feedback submitted successfully!</div>
+    </div>
+
   </div>
 </template>
 
@@ -37,7 +45,11 @@ import { useImageProcessing } from '../composables/useImageProcessing'
 
 const { imageUploaded, loading, predictions } = useImageState()
 const { predictImage } = usePrediction()
-const { resetApp } = useImageProcessing()
+const { resetApp } = useAppState()
+const { submitFeedback } = useFeedback()
+
+// Track the selected index (null means nothing is selected)
+const selectedIndex = ref(null)
 </script>
 
 <style scoped>
@@ -121,6 +133,14 @@ const { resetApp } = useImageProcessing()
   gap: 0.75rem;
 }
 
+.results-list {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .results-title {
   color: #333;
   font-size: clamp(1rem, 2.5vw, 1.125rem);
@@ -136,6 +156,19 @@ const { resetApp } = useImageProcessing()
   align-items: center;
   gap: 0.75rem;
   font-size: clamp(0.8rem, 2vw, 0.95rem);
+}
+
+/* Hover feedback */
+.result-item:hover {
+  background: #edf2f7;
+  transform: translateX(2px);
+}
+
+/* Selected state styling */
+.result-item.selected {
+  background: #7ac87e;
+  border-left-color: #4c51bf; /* Darker purple accent */
+  box-shadow: 0 0 0 2px #667eea; /* Clean border focus effect */
 }
 
 .result-rank {
@@ -162,6 +195,27 @@ const { resetApp } = useImageProcessing()
   color: #667eea;
   font-weight: 600;
   flex-shrink: 0;
+}
+
+.feedback-section {
+  display: none;
+  justify-content: center;
+}
+
+.feedback-section.active {
+  display: flex;
+}
+
+.submit-feedback-btn {
+  padding: clamp(0.75rem, 2vw, 1rem);
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 @media (max-width: 768px) {
