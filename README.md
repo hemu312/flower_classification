@@ -1,13 +1,13 @@
 # Flower Classification
 
-A deep learning-based web application for classifying flower species. The application uses a pre-trained model fine-tuned for flower recognition and provides both a REST API and web interface for predictions.
+A Deep Learning based web application for classifying flower species. The application uses a pre-trained model fine-tuned for flower recognition and provides both a REST API and web interface for predictions.
 
 ## Features
 
-- **35 Flower Species Recognition**: Classifies flowers including roses, sunflowers, tulips, lilies, and many more
-- **Top-5 Predictions**: Returns the top 5 most likely classifications with confidence scores
+- **35 Flower Species Recognition**
 - **FastAPI Backend**: Fast, modern Python API framework with automatic documentation
 - **Web Interface**: User-friendly frontend for image uploads and predictions
+- **Feedback Mechanism**: Feedback mechanism collects data for incorrect predictions and improve the model
 
 ## Supported Flower Classes
 
@@ -15,7 +15,14 @@ Amaltas, Ashokatree, Bottlebrushtree, Bougainvillea, Butterflypea, Chrysanthemum
 
 ## Usage
 
-Build the container image:
+Build the project:
+In project directory
+```bash
+mkdir HuggingFace/flower-classification
+bash build.sh
+```
+
+Now go to HuggingFace/flower-classification and Build the container image:
 ```bash
 podman build -t flower-classification .
 ```
@@ -24,18 +31,6 @@ Run the container:
 ```bash
 podman run -p 7860:7860 flower-classification
 ```
-
-## API Endpoint
-
-### POST `/predict`
-
-Upload an image for flower classification.
-
-**Request:**
-- Method: `POST`
-- Endpoint: `/predict`
-- Content-Type: `multipart/form-data`
-- Parameter: `image` (image file)
 
 ## Contributing
 
