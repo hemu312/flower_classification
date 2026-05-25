@@ -1,7 +1,7 @@
-import { useImageState } from './useImageState'
+import { useAppState } from './useAppState'
 
 export function usePrediction() {
-  const { resizedImage, loading, predictions, error } = useImageState()
+  const { resizedImage, loading, predictions, error } = useAppState()
 
   const predictImage = async () => {
     if (!resizedImage.value) {

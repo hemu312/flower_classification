@@ -25,11 +25,11 @@
 </template>
 
 <script setup>
-import { useImageState } from '../composables/useImageState'
+import { useAppState } from '../composables/useAppState'
 import { useImageProcessing } from '../composables/useImageProcessing'
 
-const { imageUploaded, resizedImage, error, loading } = useImageState()
-const { fileInput, handleFileUpload } = useImageProcessing()
+const { imageUploaded, resizedImage, error, loading, fileInput } = useAppState()
+const { handleFileUpload } = useImageProcessing()
 </script>
 
 <style scoped>

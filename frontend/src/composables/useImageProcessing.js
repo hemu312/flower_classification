@@ -1,5 +1,4 @@
-import { ref } from 'vue'
-import { useImageState } from './useImageState'
+import { useAppState } from './useAppState'
 
 export function useImageProcessing() {
   const { resizedImage, originalFile, imageUploaded, error, predictions } = useImageState()
