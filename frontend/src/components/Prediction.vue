@@ -20,13 +20,14 @@
 
     <!-- Results Section -->
     <div class="results-section" :class="{ active: predictions.length > 0 }">
-      <div class="results-title">Top 5 Predictions</div>
-      <div v-for="(result, index) in predictions" :key="index" class="result-item">
-        <span class="result-rank">{{ index + 1 }}</span>
-        <span class="result-label">{{ result.label }}</span>
-        <span class="result-confidence">{{ (result.confidence * 100).toFixed(2) }}%</span>
+      <div class="results-title">Predictions</div>
+      <div class="results-list">
+        <div v-for="(result, index) in predictions" :key="index" class="result-item" :class="{ selected: selectedIndex === index }" @click="selectedIndex = index">
+          <span class="result-rank">{{ index + 1 }}</span>
+          <span class="result-label">{{ result.label }}</span>
+          <span class="result-confidence">{{ (result.confidence * 100).toFixed(2) }}%</span>
+        </div>
       </div>
-    </div>
     </div>
 
     <!-- Feedback Section -->
@@ -39,11 +40,12 @@
 </template>
 
 <script setup>
-import { useImageState } from '../composables/useImageState'
+import { useAppState } from '../composables/useAppState'
 import { usePrediction } from '../composables/usePrediction'
-import { useImageProcessing } from '../composables/useImageProcessing'
+import { ref } from 'vue'
+import { useFeedback } from '../composables/useFeedback'
 
-const { imageUploaded, loading, predictions } = useImageState()
+const { imageUploaded, loading, predictions, isFeedbackSubmitted } = useAppState()
 const { predictImage } = usePrediction()
 const { resetApp } = useAppState()
 const { submitFeedback } = useFeedback()
