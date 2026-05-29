@@ -18,7 +18,7 @@
 
     <!-- Preview Section -->
     <div class="preview-section" :class="{ active: imageUploaded }">
-      <span class="preview-label">Preview (224x224)</span>
+      <span class="preview-label">Preview (512x512)</span>
       <img v-if="resizedImage" :src="resizedImage" class="preview-image" alt="preview">
     </div>
   </div>
@@ -93,8 +93,8 @@ const { handleFileUpload } = useImageProcessing()
 }
 
 .preview-image {
-  width: clamp(140px, 60vw, 224px);
-  height: clamp(140px, 60vw, 224px);
+  width: clamp(140px, 60vw, 512px);
+  height: clamp(140px, 60vw, 512px);
   border: 2px solid #e0e0e0;
   border-radius: 0.5rem;
   background: #f5f5f5;

@@ -36,15 +36,15 @@ export function useImageProcessing() {
 
       img.onload = () => {
         const canvas = document.createElement('canvas')
-        canvas.width = 224
-        canvas.height = 224
+        canvas.width = 512
+        canvas.height = 512
 
         const ctx = canvas.getContext('2d')
 
-        // Calculate dimensions to fit image in 224x224 (maintain aspect ratio)
-        const scale = Math.max(224 / img.width, 224 / img.height)
-        const x = 224 / 2 - (img.width / 2) * scale
-        const y = 224 / 2 - (img.height / 2) * scale
+        // Calculate dimensions to fit image in 512x512 (maintain aspect ratio)
+        const scale = Math.max(512 / img.width, 512 / img.height)
+        const x = 512 / 2 - (img.width / 2) * scale
+        const y = 512 / 2 - (img.height / 2) * scale
 
         ctx.drawImage(img, x, y, img.width * scale, img.height * scale)
 
