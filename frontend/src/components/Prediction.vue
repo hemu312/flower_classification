@@ -8,7 +8,7 @@
           <span class="spinner"></span>Predicting...
         </span>
       </button>
-      <button class="reset-btn" @click="resetApp" :disabled="loading">
+      <button class="reset-btn" @click="resetApp; selectedIndex = null" :disabled="loading">
         ↻ Reset
       </button>
     </div>
